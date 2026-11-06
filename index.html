@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#100d0d" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>The Living Memories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main id="game-shell" aria-label="The Living Memories game">
+  <canvas id="scene" aria-label="First-person view of a haunted mansion"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="topbar" id="topbar">
+    <div class="brand"><span class="brand-mark">✳</span><span>THE LIVING MEMORIES</span></div>
+    <div class="chapter">THE HOUSE REMEMBERS</div>
+  </header>
+  <section class="hud" id="hud" hidden>
+    <div class="objective"><span class="eyebrow">YOUR TASK</span><strong id="objective">Find what left the canvas.</strong></div>
+    <div class="memory-counter"><span class="eyebrow">REMEMBERED</span><div id="memory-dots"></div></div>
+    <div class="exposure-wrap"><div class="exposure-label"><span class="eyebrow">WHISPER EXPOSURE</span><span id="exposure-state">QUIET</span></div><div class="exposure-track"><div id="exposure-fill"></div></div></div>
+  </section>
+  <div class="reticle" id="reticle" hidden><i></i><i></i></div>
+  <div class="prompt" id="prompt" hidden></div>
+  <div class="message" id="message" hidden></div>
+  <div class="controls-hint" id="controls-hint" hidden><span>WASD <b>MOVE</b></span><span>MOUSE <b>LOOK</b></span><span>SHIFT <b>RUN</b></span><span>E <b>EXAMINE</b></span><span>F <b>LANTERN</b></span></div>
+  <div class="overlay" id="title-screen">
+    <div class="title-card">
+      <div class="eyebrow gold">A FIRST-PERSON PSYCHOLOGICAL HORROR</div>
+      <h1>The Living<br><em>Memories</em></h1>
+      <p class="intro">Every portrait is empty.<br>Something in the house remembers why.</p>
+      <button id="begin" class="primary-button">ENTER THE HOUSE <span>↗</span></button>
+      <div class="title-foot"><span>AN EXPERIENCE IN FIVE FRAGMENTS</span><span>↑↓←→ / WASD &nbsp; · &nbsp; MOUSE</span></div>
+    </div>
+    <div class="title-aside"><span>PRIVATE COLLECTION</span><span>EST. 1891</span></div>
+  </div>
+  <div class="overlay panel-overlay" id="note-panel" hidden>
+    <article class="note-card"><div class="eyebrow gold" id="note-kicker">A MEMORY SURFACES</div><h2 id="note-title"></h2><p id="note-copy"></p><div class="note-footer"><span id="note-progress"></span><button id="continue" class="text-button">CLOSE THE FRAME <span>↗</span></button></div></article>
+  </div>
+  <div class="overlay ending-overlay" id="ending-screen" hidden>
+    <article class="ending-card"><div class="eyebrow gold">THE LAST ROOM</div><h2 id="ending-title">What remains</h2><p id="ending-copy"></p><div class="ending-actions"><button id="restart" class="primary-button">BEGIN AGAIN <span>↗</span></button><span>Some doors open both ways.</span></div></article>
+  </div>
+  <div class="pause-badge" id="pause-badge" hidden>PAUSED <span>CLICK TO RETURN</span></div>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
